@@ -1,0 +1,777 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, Arial;
+    background: #080d19;
+    color: #edf2ff
+}
+
+a {
+    color: inherit
+}
+
+.app-shell {
+    display: flex;
+    min-height: 100vh
+}
+
+.sidebar {
+    width: 270px;
+    background: #0d1322;
+    border-right: 1px solid #202a42;
+    padding: 24px 18px;
+    position: fixed;
+    top: 0;
+    bottom: 0
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 38px
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #7c5cff, #25c2a0);
+    font-weight: 800
+}
+
+.brand b {
+    display: block;
+    font-size: 14px
+}
+
+.brand span {
+    display: block;
+    color: #7e8ba7;
+    font-size: 11px;
+    margin-top: 3px
+}
+
+.sidebar nav {
+    display: grid;
+    gap: 6px
+}
+
+.sidebar nav a {
+    padding: 12px 13px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #8e9bb7;
+    font-size: 13px
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #182138;
+    color: #fff
+}
+
+.source-card {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 22px;
+    border: 1px solid #26304a;
+    background: #11192a;
+    border-radius: 14px;
+    padding: 15px
+}
+
+.source-card small {
+    color: #7c8aa6;
+    font-size: 9px;
+    letter-spacing: 1.4px
+}
+
+.source-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 8px 0
+}
+
+.source-card span {
+    font-size: 10px;
+    color: #71809e
+}
+
+.main {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+    padding: 34px 38px 70px;
+    max-width: 1700px
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 28px
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #7c8aa6;
+    font-weight: 700
+}
+
+.topbar h1 {
+    font-size: 28px;
+    margin: 8px 0 6px
+}
+
+.topbar p {
+    color: #8290ac;
+    margin: 0;
+    font-size: 13px
+}
+
+.status {
+    border: 1px solid #26304a;
+    background: #11192a;
+    border-radius: 999px;
+    padding: 9px 13px;
+    color: #9ba7be;
+    font-size: 11px
+}
+
+.status i {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #28d7a1;
+    border-radius: 50%;
+    margin-right: 7px
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 16px
+}
+
+.metric-card,
+.panel {
+    background: #0f1728;
+    border: 1px solid #202b44;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .12)
+}
+
+.metric-card {
+    padding: 18px
+}
+
+.metric-card span,
+.metric-card em {
+    display: block;
+    color: #7f8ca7;
+    font-size: 11px
+}
+
+.metric-card strong {
+    display: block;
+    font-size: 27px;
+    margin: 8px 0 4px
+}
+
+.metric-card em {
+    font-style: normal;
+    font-size: 10px
+}
+
+.grid-two {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 16px;
+    margin-bottom: 16px
+}
+
+.panel {
+    padding: 20px;
+    margin-bottom: 16px
+}
+
+.tester {
+    min-height: 500px
+}
+
+.panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px
+}
+
+.panel-head h2 {
+    font-size: 16px;
+    margin: 0 0 5px
+}
+
+.panel-head p {
+    font-size: 11px;
+    color: #7f8ca7;
+    margin: 0
+}
+
+.pill {
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 7px 9px;
+    border-radius: 8px;
+    background: #182138;
+    color: #9da9c0
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+label {
+    display: block;
+    color: #9ca8bf;
+    font-size: 11px;
+    margin-bottom: 13px
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    margin-top: 7px;
+    border: 1px solid #28344e;
+    background: #0a1120;
+    color: #edf2ff;
+    border-radius: 10px;
+    padding: 11px 12px;
+    outline: none;
+    font: inherit;
+    font-size: 12px
+}
+
+textarea {
+    resize: vertical
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #596dff
+}
+
+.hint {
+    font-size: 9px;
+    color: #59677f;
+    margin-left: 5px
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 3px
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 11px 14px;
+    font: 600 11px Inter;
+    cursor: pointer
+}
+
+.primary {
+    background: linear-gradient(135deg, #6e5cf6, #4b8dff);
+    color: white
+}
+
+.secondary {
+    background: #19233a;
+    color: #dbe2f4;
+    border: 1px solid #2b3855
+}
+
+.ghost {
+    background: transparent;
+    color: #8794ad;
+    border: 1px solid #26304a
+}
+
+.primary:disabled {
+    opacity: .6
+}
+
+.error {
+    margin-top: 14px;
+    border: 1px solid #693546;
+    background: #2a1420;
+    color: #ff9eb5;
+    padding: 11px;
+    border-radius: 9px;
+    font-size: 11px
+}
+
+.hidden {
+    display: none
+}
+
+.explain {
+    min-height: 500px
+}
+
+.empty {
+    color: #65738e;
+    font-size: 12px;
+    padding: 25px;
+    text-align: center
+}
+
+.risk-big {
+    border-radius: 14px;
+    padding: 17px;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 15px
+}
+
+.risk-big small {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 4px;
+    opacity: .75
+}
+
+.risk-big.low {
+    background: #0e302a;
+    color: #64e1b4
+}
+
+.risk-big.medium {
+    background: #342a10;
+    color: #f2ca65
+}
+
+.risk-big.high {
+    background: #351822;
+    color: #ff7f9a
+}
+
+.response {
+    background: #0a1120;
+    border: 1px solid #222d45;
+    padding: 13px;
+    border-radius: 10px;
+    margin-bottom: 15px
+}
+
+.response b {
+    font-size: 10px;
+    color: #8b98b1
+}
+
+.response p {
+    font-size: 11px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    margin-bottom: 0;
+    max-height: 180px;
+    overflow: auto
+}
+
+.explain h3 {
+    font-size: 11px;
+    color: #aeb9cc;
+    margin: 16px 0 8px
+}
+
+.explain ul {
+    padding-left: 20px;
+    margin: 0
+}
+
+.explain li {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #8f9bb2
+}
+
+.chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap
+}
+
+.chips span {
+    font-size: 9px;
+    padding: 7px 9px;
+    border-radius: 999px;
+    background: #182138;
+    color: #aab5ca
+}
+
+.chart-panel {
+    min-height: 320px
+}
+
+.chart-panel canvas {
+    max-height: 255px
+}
+
+.bars {
+    display: grid;
+    gap: 12px
+}
+
+.bar-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 30px;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px
+}
+
+.bar-row>div {
+    height: 9px;
+    background: #1a2439;
+    border-radius: 20px;
+    overflow: hidden
+}
+
+.bar-row i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #725cff, #28d7a1);
+    border-radius: 20px
+}
+
+.bar-row b {
+    font-size: 10px;
+    color: #8c99b2
+}
+
+.table-wrap {
+    overflow: auto
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px
+}
+
+th,
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #202b42;
+    text-align: left;
+    font-size: 10px;
+    vertical-align: top
+}
+
+th {
+    color: #77849d;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .7px
+}
+
+td {
+    color: #c7d0e1
+}
+
+td small {
+    display: block;
+    color: #65738d;
+    margin-top: 4px
+}
+
+.risk-tag {
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 7px;
+    font-size: 9px;
+    font-weight: 700
+}
+
+.risk-tag.low {
+    background: #103128;
+    color: #5ce0af
+}
+
+.risk-tag.medium {
+    background: #382d12;
+    color: #f0c65d
+}
+
+.risk-tag.high {
+    background: #381923;
+    color: #ff7d98
+}
+
+.recommendations {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px
+}
+
+.recommendations div {
+    padding: 15px;
+    background: #111a2c;
+    border: 1px solid #222e48;
+    border-radius: 12px;
+    color: #6be1b6;
+    font-size: 13px
+}
+
+.recommendations b {
+    display: block;
+    color: #e9eef9;
+    font-size: 11px;
+    margin: 7px 0
+}
+
+.recommendations span {
+    display: block;
+    color: #74829c;
+    font-size: 10px;
+    line-height: 1.5
+}
+
+.report-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px
+}
+
+.report-links a {
+    background: #1b2740;
+    padding: 10px 13px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 10px;
+    color: #cbd5e9
+}
+
+@media(max-width:1100px) {
+    .metrics {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .grid-two {
+        grid-template-columns: 1fr
+    }
+
+    .recommendations {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:760px) {
+    .sidebar {
+        display: none
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 22px
+    }
+
+    .topbar {
+        display: block
+    }
+
+    .status {
+        display: inline-block;
+        margin-top: 14px
+    }
+
+    .metrics {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr
+    }
+
+    .recommendations {
+        grid-template-columns: 1fr
+    }
+}
+
+/* =========================================
+   Understandable Risk Level Chart
+   ========================================= */
+
+.risk-chart-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.risk-chart-container canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/* Center information inside doughnut */
+
+.risk-center-text {
+  position: absolute;
+
+  left: 50%;
+  top: 54%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 150px;
+}
+
+.risk-center-text strong {
+  font-size: 20px;
+  font-weight: 800;
+
+  color: #f5f7ff;
+
+  line-height: 1.2;
+}
+
+.risk-center-text span {
+  margin-top: 6px;
+
+  font-size: 13px;
+
+  color: #aeb8d0;
+}
+
+.risk-center-text small {
+  margin-top: 4px;
+
+  font-size: 11px;
+
+  color: #7f8ba8;
+}
+
+
+/* Risk explanation guide */
+
+.risk-guide {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+.risk-guide-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 12px;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.035);
+
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.risk-guide-item strong {
+  display: block;
+
+  font-size: 12px;
+
+  color: #f1f4fb;
+}
+
+.risk-guide-item small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 10px;
+
+  color: #8792aa;
+}
+
+
+/* Colored indicator */
+
+.risk-dot {
+  width: 10px;
+  height: 10px;
+
+  min-width: 10px;
+
+  border-radius: 50%;
+}
+
+
+/* Low */
+
+.risk-guide-item.low .risk-dot {
+  background: #38a8e8;
+}
+
+
+/* Medium */
+
+.risk-guide-item.medium .risk-dot {
+  background: #ff6384;
+}
+
+
+/* High */
+
+.risk-guide-item.high .risk-dot {
+  background: #ff9f40;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .risk-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-chart-container {
+    height: 270px;
+  }
+}
